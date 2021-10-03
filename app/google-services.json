@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "376119417641",
+    "project_id": "chaterest-c1552",
+    "storage_bucket": "chaterest-c1552.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:376119417641:android:b518914409cfe874e03538",
+        "android_client_info": {
+          "package_name": "com.teamhaddy.app.chaterest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "376119417641-k3liev17vro41gincfdvumbhgob4d2v3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.teamhaddy.app.chaterest",
+            "certificate_hash": "92e264aa18fc32892edfb3998ec9a3c4f5f9a56a"
+          }
+        },
+        {
+          "client_id": "376119417641-0ffvjnhfq8pc3dt1lovbldi3drr2n5fu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA41u0dxRO4-rwhAF797I-mKBOzKvqCI8s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "376119417641-0ffvjnhfq8pc3dt1lovbldi3drr2n5fu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
