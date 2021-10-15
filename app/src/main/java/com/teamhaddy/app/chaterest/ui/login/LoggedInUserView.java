@@ -1,5 +1,7 @@
 package com.teamhaddy.app.chaterest.ui.login;
 
+import com.teamhaddy.app.chaterest.ui.login.LoginActivity;
+
 /**
  * Class exposing authenticated user details to the UI.
  */
