@@ -2,19 +2,16 @@ package com.teamhaddy.app.chaterest.ui.login;
 
 import android.app.Activity;
 
-import androidx.annotation.RequiresApi;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.PersistableBundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
@@ -26,9 +23,19 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.api.identity.BeginSignInRequest;
-import com.google.android.gms.auth.api.identity.Identity;
-import com.google.android.gms.auth.api.identity.SignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
+
 import com.teamhaddy.app.chaterest.MainActivity;
 import com.teamhaddy.app.chaterest.R;
 import com.teamhaddy.app.chaterest.ui.login.LoginViewModel;
@@ -39,33 +46,20 @@ public class LoginActivity extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
     private ActivityLoginBinding binding;
-    private SignInClient oneTapClient;
-    private BeginSignInRequest signInRequest;
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
+    private static final String TAG = "GoogleActivity";
+    private static final int RC_SIGN_IN = 9001;
+
+    // [START declare_auth]
+    private FirebaseAuth mAuth;
+    // [END declare_auth]
+
+    private GoogleSignInClient mGoogleSignInClient;
+
+
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState,
-                         @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
-
-       oneTapClient = Identity.getSignInClient(this);
-        signInRequest = BeginSignInRequest.builder()
-                .setPasswordRequestOptions(BeginSignInRequest.PasswordRequestOptions.builder()
-                        .setSupported(true)
-                        .build())
-                .setGoogleIdTokenRequestOptions(BeginSignInRequest.GoogleIdTokenRequestOptions.builder()
-                        .setSupported(true)
-                        // Your server's client ID, not your Android client ID.
-                        .setServerClientId(getString(R.string.default_web_client_id))
-                        // Only show accounts previously used to sign in.
-                        .setFilterByAuthorizedAccounts(true)
-                        .build())
-                // Automatically sign in when exactly one credential is retrieved.
-                .setAutoSelectEnabled(true)
-                .build();
-
-
-
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -74,13 +68,24 @@ public class LoginActivity extends AppCompatActivity {
                 .get(LoginViewModel.class);
 
         final EditText usernameEditText = binding.username;
-        usernameEditText.setAutofillHints(View.AUTOFILL_HINT_USERNAME);
-
         final EditText passwordEditText = binding.password;
-        passwordEditText.setAutofillHints(View.AUTOFILL_HINT_PASSWORD);
-
         final Button loginButton = binding.login;
         final ProgressBar loadingProgressBar = binding.loading;
+
+        // [START config_signin]
+        // Configure Google Sign In
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken("376119417641-0ffvjnhfq8pc3dt1lovbldi3drr2n5fu.apps.googleusercontent.com")
+                .requestEmail()
+                .build();
+
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        // [END config_signin]
+
+        // [START initialize_auth]
+        // Initialize Firebase Auth
+        mAuth = FirebaseAuth.getInstance();
+        // [END initialize_auth]
 
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
             @Override
@@ -163,6 +168,8 @@ public class LoginActivity extends AppCompatActivity {
         String welcome = getString(R.string.welcome) + model.getDisplayName();
         // TODO : initiate successful logged in experience
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
     }
 
     private void showLoginFailed(@StringRes Integer errorString) {
