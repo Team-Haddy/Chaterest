@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chaterest">
         <activity
+            android:name=".Interest"
+            android:exported="true" />
+        <activity
             android:name=".ui.login.LoginActivity"
             android:exported="true"
             android:label="@string/title_activity_login" />
