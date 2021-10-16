@@ -6,83 +6,97 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:backgroundTint="@color/design_default_color_on_primary"
     app:layoutDescription="@xml/activity_interest_scene"
     tools:context=".Interest">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="50dp"
+        android:padding="80dp"
         android:text="@string/interest"
-        android:textSize="20sp" />
-    <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal">
+        android:textSize="20sp"
+         />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="20dp"
+                >
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonTech"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:contentDescription="@string/tech"
+                android:focusable="true"
+                android:padding="16dp"
+                app:srcCompat="@drawable/ic_tech"
+                tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck"
+                />
+
+
+            <TextView
+                android:id="@+id/tech"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/tech"
+                android:textSize="20sp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="20dp">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButtonTech"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:contentDescription="@string/tech"
-            android:focusable="true"
-            android:padding="16dp"
-            app:srcCompat="@drawable/ic_tech"
-            tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+                android:id="@+id/floatingActionButtonSport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:clickable="true"
+                app:srcCompat="@drawable/ic_sports"
+                android:focusable="true"
+                android:contentDescription="@string/sports"
 
-    <TextView
-        android:id="@+id/tech"
-        android:layout_width="match_parent"
+                 />
+            <TextView
+                android:id="@+id/sport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/sports"
+                android:textSize="20sp"
+                 />
+        </LinearLayout>
+
+        <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="@string/tech"
-        android:textSize="20sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButtonSport"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:clickable="true"
-            app:srcCompat="@drawable/ic_sports"
-            android:focusable="true"
-            android:contentDescription="@string/sports" />
-        <TextView
-            android:id="@+id/sport"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:text="@string/sports"
-            android:textSize="20sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButtonMusic"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:clickable="true"
-            app:srcCompat="@drawable/ic_music"
-            android:focusable="true"
-            android:contentDescription="@string/music" />
-        <TextView
-            android:id="@+id/music"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:text="@string/music"
-            android:textSize="20sp" />
-    </LinearLayout>
-
+        android:orientation="horizontal"
+            android:padding="20dp">
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButtonMusic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:clickable="true"
+                    app:srcCompat="@drawable/ic_music"
+                    android:focusable="true"
+                    android:contentDescription="@string/music"
+                     />
+                <TextView
+                    android:id="@+id/music"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="@string/music"
+                    android:textSize="20sp"
+                     />
+        </LinearLayout>
 </LinearLayout>
