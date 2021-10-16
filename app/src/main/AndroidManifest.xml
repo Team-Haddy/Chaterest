@@ -11,12 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chaterest">
         <activity
-            android:name=".Interest"
+            android:name=".GoogleSignInActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.login.LoginActivity"
-            android:exported="true"
-            android:label="@string/title_activity_login" />
+            android:name=".Interest"
+            android:exported="true" />
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
