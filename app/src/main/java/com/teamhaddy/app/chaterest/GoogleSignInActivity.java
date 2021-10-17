@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -115,6 +116,8 @@ public class GoogleSignInActivity extends AppCompatActivity {
     private void updateUI(FirebaseUser user) {
         if(user!=null)
             startActivity(new Intent(this, MainActivity.class));
+        else
+            Toast.makeText(getApplicationContext(), "Sign in to continue", Toast.LENGTH_SHORT).show();
 
     }
 }
