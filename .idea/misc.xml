@@ -15,26 +15,23 @@
         <entry key="..\:/Chaterest/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
         <entry key="..\:/Chaterest/app/src/main/res/layout/activity_splash_screen.xml" value="0.13333333333333333" />
         <entry key="..\:/Chaterest/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.13333333333333333" />
-        <entry key="..\:/Users/anuvi/AndroidStudioProjects/Chaterest/app/src/main/res/drawable-anydpi/ic_Settings.xml" value="0.14907407407407408" />
-        <entry key="..\:/Users/anuvi/AndroidStudioProjects/Chaterest/app/src/main/res/drawable-anydpi/ic_settings.xml" value="0.29375" />
-        <entry key="..\:/Users/anuvi/AndroidStudioProjects/Chaterest/app/src/main/res/drawable/ic_launcher_background.xml" value="0.14907407407407408" />
-        <entry key="..\:/Users/anuvi/AndroidStudioProjects/Chaterest/app/src/main/res/layout/activity_gsignin.xml" value="0.265625" />
-        <entry key="..\:/Users/anuvi/AndroidStudioProjects/Chaterest/app/src/main/res/layout/activity_interest.xml" value="0.265625" />
-        <entry key="..\:/Users/anuvi/AndroidStudioProjects/Chaterest/app/src/main/res/layout/activity_settings.xml" value="0.1" />
-        <entry key="..\:/Users/anuvi/AndroidStudioProjects/Chaterest/app/src/main/res/layout/fragment_tech.xml" value="0.265625" />
-        <entry key="..\:/Users/anuvi/AndroidStudioProjects/Chaterest/app/src/main/res/menu/commonmenu.xml" value="0.265625" />
         <entry key="..\:/Users/dhanu/AndroidStudioProjects/Chaterest/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/dhanu/AndroidStudioProjects/Chaterest/app/src/main/res/drawable/ic_music.xml" value="0.3776041666666667" />
         <entry key="..\:/Users/dhanu/AndroidStudioProjects/Chaterest/app/src/main/res/drawable/ic_sports.xml" value="0.3776041666666667" />
         <entry key="..\:/Users/dhanu/AndroidStudioProjects/Chaterest/app/src/main/res/drawable/ic_tech.xml" value="0.3776041666666667" />
         <entry key="..\:/Users/dhanu/AndroidStudioProjects/Chaterest/app/src/main/res/drawable/splash_background.xml" value="0.38177083333333334" />
+        <entry key="..\:/Users/dhanu/AndroidStudioProjects/Chaterest/app/src/main/res/layout/activity_gsignin.xml" value="0.35" />
         <entry key="..\:/Users/dhanu/AndroidStudioProjects/Chaterest/app/src/main/res/layout/activity_interest.xml" value="0.3614583333333333" />
         <entry key="..\:/Users/dhanu/AndroidStudioProjects/Chaterest/app/src/main/res/layout/activity_login.xml" value="0.2296195652173913" />
         <entry key="..\:/Users/dhanu/AndroidStudioProjects/Chaterest/app/src/main/res/layout/activity_main.xml" value="0.3614583333333333" />
+        <entry key="..\:/Users/dhanu/AndroidStudioProjects/Chaterest/app/src/main/res/layout/activity_settings.xml" value="0.35" />
+        <entry key="..\:/Users/dhanu/AndroidStudioProjects/Chaterest/app/src/main/res/layout/fragment_music.xml" value="0.35" />
+        <entry key="..\:/Users/dhanu/AndroidStudioProjects/Chaterest/app/src/main/res/layout/fragment_sports.xml" value="0.35" />
+        <entry key="..\:/Users/dhanu/AndroidStudioProjects/Chaterest/app/src/main/res/layout/fragment_tech.xml" value="0.35" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
