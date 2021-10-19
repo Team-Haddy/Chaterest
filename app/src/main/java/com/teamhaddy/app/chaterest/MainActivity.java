@@ -4,7 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -43,5 +46,22 @@ public class MainActivity extends AppCompatActivity {
         }
         );
         tabLayoutMediator.attach();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.commonmenu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        sendUserToSettingsactivity();
+        return super.onOptionsItemSelected(item);
+    }
+    private void sendUserToSettingsactivity(){
+
+        Intent settingsIntent= new Intent(getApplicationContext(), SettingsActivity.class);
+        startActivity(settingsIntent);
     }
 }
