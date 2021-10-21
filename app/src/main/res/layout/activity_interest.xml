@@ -54,17 +54,17 @@
             android:orientation="horizontal"
             android:padding="20dp">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/floatingActionButtonSport"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
                 android:clickable="true"
-                app:srcCompat="@drawable/ic_sports"
-                android:focusable="true"
                 android:contentDescription="@string/sports"
+                android:focusable="true"
+                android:padding="16dp"
+                app:backgroundTint="@color/teal_200"
 
-                 />
+                app:srcCompat="@drawable/ic_sports" />
             <TextView
                 android:id="@+id/sport"
                 android:layout_width="match_parent"
@@ -99,4 +99,17 @@
                     android:textSize="20sp"
                      />
         </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginStart="@dimen/browser_actions_context_menu_min_padding"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:onClick="toggle"
+        app:backgroundTint="@color/teal_200"
+        android:text="@string/update"
+        app:iconTint="#00BCD4" />
 </LinearLayout>
