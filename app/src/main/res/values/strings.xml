@@ -15,5 +15,7 @@
     <string name="music">Music</string>
     <string name="interest">Choose your interests</string>
     <string name="update">Update</string>
+    <string name="signout">Sign Out</string>
+    <string name="changeusr">Change Username</string>
 
 </resources>
