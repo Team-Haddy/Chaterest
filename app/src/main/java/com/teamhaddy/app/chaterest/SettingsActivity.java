@@ -33,12 +33,8 @@ public class SettingsActivity extends AppCompatActivity {
 
 
     public void transition(View view) {
-        Intent interest =new Intent(this,Interest.class);
-        startActivity(interest);
-        Toast.makeText(getApplicationContext(), "Update Your Interest", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
     }
-
-
-
-    }
+}
 

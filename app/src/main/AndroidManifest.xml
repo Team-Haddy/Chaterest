@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.teamhaddy.app.chaterest">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:fullBackupOnly="true"
@@ -18,9 +19,6 @@
             android:exported="false" />
         <activity
             android:name=".GoogleSignInActivity"
-            android:exported="true" />
-        <activity
-            android:name=".Interest"
             android:exported="true" />
         <activity
             android:name=".SplashScreenActivity"
