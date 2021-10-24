@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -47,6 +49,7 @@ public class SettingsActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
 
         actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setTitle("Settings");
 
         ChangeUsername.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,20 +71,13 @@ public class SettingsActivity extends AppCompatActivity {
     public void onStart(){
         super.onStart();
         FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
-        //String dispName=user.getDisplayName();
         editedUsername.setText(user.getDisplayName());
 
         Uri img=user.getPhotoUrl();
-            UserProfilePic.setImageURI(Uri.parse("android.resource://com.teamhaddy.app.chaterest/"+R.drawable.profile_image));
+        UserProfilePic.setImageURI(Uri.parse("android.resource://com.teamhaddy.app.chaterest/"+R.drawable.profile_image));
     }
 
-
-
-    public void transition(View view) {
-        Intent intent = new Intent(this,MainActivity.class);
-        startActivity(intent);
-    }
-
+    //Change Username
     public void updateProfile() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -103,7 +99,32 @@ public class SettingsActivity extends AppCompatActivity {
 
 
     public void SignOut(){
-        FirebaseAuth.getInstance().signOut();
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(SettingsActivity.this);
+
+        builder.setMessage("If you sign out, you won't be able to access Chaterest unless you sign in again")
+                .setTitle("Sign out?");
+
+        builder.setCancelable(false);
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                FirebaseAuth.getInstance().signOut();
+                finish();
+                gotoLogin();
+            }
+        });
+
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+               dialog.cancel();
+            }
+        });
+
+        AlertDialog SignOutAlert = builder.create();
+        SignOutAlert.show();
+    }
+
+    public void gotoLogin(){
         startActivity(new Intent(this, GoogleSignInActivity.class));
     }
 

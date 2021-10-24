@@ -12,6 +12,13 @@
             android:gravity="center">
     </item>
 
+    <item android:height="60dp"
+            android:width="120dp"
+            android:gravity="bottom|center_horizontal">
+        <bitmap
+            android:src="@drawable/footer" />
+    </item>
+
 
 
 </layer-list>
