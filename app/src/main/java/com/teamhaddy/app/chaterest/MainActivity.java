@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
                     case 2: {
                         tab.setText("Music");
                         tab.setIcon(R.drawable.ic_music);
+                        break;
                     }
                 }
             }
@@ -63,5 +64,13 @@ public class MainActivity extends AppCompatActivity {
 
         Intent settingsIntent= new Intent(getApplicationContext(), SettingsActivity.class);
         startActivity(settingsIntent);
+    }
+
+    @Override
+    public void onBackPressed(){
+        Intent a = new Intent(Intent.ACTION_MAIN);
+        a.addCategory(Intent.CATEGORY_HOME);
+        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(a);
     }
 }
