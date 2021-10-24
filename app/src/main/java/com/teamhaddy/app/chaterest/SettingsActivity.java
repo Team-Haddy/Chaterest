@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,13 +23,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 
-import de.hdodenhof.circleimageview.CircleImageView;
+//import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SettingsActivity extends AppCompatActivity {
 
     private Button ChangeUsername,SignOutBtn;
     private EditText editedUsername;
-    private CircleImageView UserProfilePic;
+   // private CircleImageView UserProfilePic;
+    private ImageView UserProfilePic;
     private static final String TAG = "SettingsActivity";
 
     @Override
@@ -39,7 +41,8 @@ public class SettingsActivity extends AppCompatActivity {
         SignOutBtn= (Button) findViewById(R.id.sign_out_btn);
         ChangeUsername=(Button) findViewById(R.id.change_username_btn);
         editedUsername= (EditText) findViewById(R.id.set_username);
-        UserProfilePic =(CircleImageView) findViewById(R.id.set_profile);
+       // UserProfilePic =(CircleImageView) findViewById(R.id.set_profile);
+        UserProfilePic=(ImageView) findViewById(R.id.set_profile);
 
         ActionBar actionBar = getSupportActionBar();
 
@@ -58,6 +61,7 @@ public class SettingsActivity extends AppCompatActivity {
                 SignOut();
             }
         });
+
     }
 
     @Override
@@ -67,8 +71,8 @@ public class SettingsActivity extends AppCompatActivity {
         //String dispName=user.getDisplayName();
         editedUsername.setText(user.getDisplayName());
 
-
-        UserProfilePic.setImageURI(user.getPhotoUrl());
+        Uri img=user.getPhotoUrl();
+            UserProfilePic.setImageURI(Uri.parse("android.resource://com.teamhaddy.app.chaterest/"+R.drawable.profile_image));
     }
 
 

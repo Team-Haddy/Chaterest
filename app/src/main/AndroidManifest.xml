@@ -12,14 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chaterest">
         <activity
-            android:name=".CircleImageView"
-            android:exported="true" />
-        <activity
             android:name=".SettingsActivity"
             android:exported="false" />
         <activity
             android:name=".GoogleSignInActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.Chaterest.NoActionBar"/>
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"

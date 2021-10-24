@@ -17,5 +17,6 @@
     <string name="update">Update</string>
     <string name="signout">Sign Out</string>
     <string name="changeusr">Change Username</string>
+    <string name="usrhint">Username</string>
 
 </resources>
