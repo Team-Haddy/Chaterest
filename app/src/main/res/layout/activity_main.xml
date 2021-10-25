@@ -20,6 +20,7 @@
         app:tabPaddingBottom="8dp"
         android:background="@color/colorPrimary"
         app:tabIconTint="@color/white"
+        app:tabIndicatorAnimationMode="elastic"
         app:tabTextColor="@color/white"
         app:tabIndicatorColor="@color/colorAccent"
         app:layout_constraintTop_toTopOf="parent"
