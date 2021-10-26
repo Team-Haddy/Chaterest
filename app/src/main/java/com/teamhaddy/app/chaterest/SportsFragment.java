@@ -4,9 +4,19 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.firebase.ui.database.FirebaseListAdapter;
+import com.firebase.ui.database.FirebaseListOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +24,8 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class SportsFragment extends Fragment {
+
+    private FirebaseListAdapter<ChatMessage> adapter;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -56,9 +68,82 @@ public class SportsFragment extends Fragment {
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
+
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        adapter.stopListening();
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sports, container, false);
+
+        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_tech, null);
+
+        ImageView fab = (ImageView) root.findViewById(R.id.send_image);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText input = (EditText) root.findViewById(R.id.user_message);
+
+                // Read the input field and push a new instance
+                // of ChatMessage to the Firebase database
+                FirebaseDatabase.getInstance()
+                        .getReference()
+                        .child("Sports")
+                        .push()
+                        .setValue(new ChatMessage(input.getText().toString(),
+                                FirebaseAuth.getInstance()
+                                        .getCurrentUser()
+                                        .getDisplayName())
+                        );
+
+                // Clear the input
+                input.setText("");
+
+            }
+        });
+
+        ListView listOfMessages = (ListView) root.findViewById(R.id.list_message);
+
+        FirebaseListOptions<ChatMessage> options =
+                new FirebaseListOptions.Builder<ChatMessage>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Sports"), ChatMessage.class)
+                        .setLayout(R.layout.messages2)
+                        .build();
+
+        adapter = new FirebaseListAdapter<ChatMessage>(options) {
+            @Override
+            protected void populateView(View v, ChatMessage model, int position) {
+                // Get references to the views of message.xml
+                TextView messageText = (TextView)v.findViewById(R.id.message_text2);
+                TextView messageUser = (TextView)v.findViewById(R.id.message_user2);
+                TextView messageTime = (TextView)v.findViewById(R.id.message_time2);
+
+                // Set their text
+                messageText.setText(model.getMessageText());
+                messageUser.setText(model.getMessageUser());
+
+                // Format the date before showing it
+                messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)",
+                        model.getMessageTime()));
+            }
+        };
+
+        listOfMessages.setAdapter(adapter);
+
+
+        //return inflater.inflate(R.layout.fragment_tech, container, false);
+        return root;
+
     }
+
 }

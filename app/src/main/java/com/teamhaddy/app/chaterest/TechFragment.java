@@ -1,6 +1,6 @@
 package com.teamhaddy.app.chaterest;
 
-import android.media.Image;
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,7 +9,6 @@ import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -20,8 +19,6 @@ import com.firebase.ui.database.FirebaseListOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.ArrayList;
-import java.util.List;
 
 
 /**
