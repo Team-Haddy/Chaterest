@@ -21,7 +21,7 @@
         android:id="@+id/message_time"
         android:textSize="10sp"
         android:layout_marginRight="3dp"
-        android:textColor="@color/grey_1"/>
+        android:textColor="@color/grey_2"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -31,6 +31,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"
         android:id="@+id/message_text"
+        android:autoLink="all"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="18sp" />
 
