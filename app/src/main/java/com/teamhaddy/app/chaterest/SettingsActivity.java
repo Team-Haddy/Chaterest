@@ -9,8 +9,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,14 +23,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 
-//import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SettingsActivity extends AppCompatActivity {
 
     private Button ChangeUsername,SignOutBtn;
     private EditText editedUsername;
-   // private CircleImageView UserProfilePic;
-    private ImageView UserProfilePic;
     private static final String TAG = "SettingsActivity";
 
     @Override
@@ -43,8 +38,7 @@ public class SettingsActivity extends AppCompatActivity {
         SignOutBtn= (Button) findViewById(R.id.sign_out_btn);
         ChangeUsername=(Button) findViewById(R.id.change_username_btn);
         editedUsername= (EditText) findViewById(R.id.set_username);
-       // UserProfilePic =(CircleImageView) findViewById(R.id.set_profile);
-        UserProfilePic=(ImageView) findViewById(R.id.set_profile);
+
 
         ActionBar actionBar = getSupportActionBar();
 
@@ -73,8 +67,6 @@ public class SettingsActivity extends AppCompatActivity {
         FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
         editedUsername.setText(user.getDisplayName());
 
-        Uri img=user.getPhotoUrl();
-        UserProfilePic.setImageURI(Uri.parse("android.resource://com.teamhaddy.app.chaterest/"+R.drawable.profile_image));
     }
 
     //Change Username

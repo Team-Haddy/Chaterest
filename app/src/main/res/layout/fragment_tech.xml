@@ -11,14 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="50dp"
-        android:divider="@android:color/black"
-        android:dividerHeight="5dp"
         android:stackFromBottom="true"
         android:transcriptMode="alwaysScroll"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:dividerHeight="16dp"
+        android:divider="@android:color/transparent"/>
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -51,3 +51,4 @@
     </LinearLayout>
 
 </RelativeLayout>
+

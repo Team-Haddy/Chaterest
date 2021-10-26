@@ -141,7 +141,6 @@ public class SportsFragment extends Fragment {
         listOfMessages.setAdapter(adapter);
 
 
-        //return inflater.inflate(R.layout.fragment_tech, container, false);
         return root;
 
     }
