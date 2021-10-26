@@ -1,45 +1,46 @@
 package com.teamhaddy.app.chaterest;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
+import java.util.Date;
 
 public class ChatMessage {
 
-    private String message;
-    private String name;
-    private Long timestamp;
+    private String messageText;
+    private String messageUser;
+    private long messageTime;
 
-    public ChatMessage() {
+    public ChatMessage(String messageText, String messageUser) {
+        this.messageText = messageText;
+        this.messageUser = messageUser;
+
+        // Initialize to current time
+        messageTime = new Date().getTime();
     }
 
-    ChatMessage(String message, String name, Long timestamp) {
-        this.message = message;
-        this.name = name;
-        this.timestamp = timestamp;
+    public ChatMessage(){
+
     }
 
-    public String getMessage() {
-        return message;
+    public String getMessageText() {
+        return messageText;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setMessageText(String messageText) {
+        this.messageText = messageText;
     }
 
-    public String getName() {
-        return name;
+    public String getMessageUser() {
+        return messageUser;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setMessageUser(String messageUser) {
+        this.messageUser = messageUser;
     }
 
-    public Long getTimestamp() {
-        return timestamp;
+    public long getMessageTime() {
+        return messageTime;
     }
 
-    public void setTimestamp(Long timestamp) {
-        this.timestamp = timestamp;
+    public void setMessageTime(long messageTime) {
+        this.messageTime = messageTime;
     }
 }
