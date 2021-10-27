@@ -1,5 +1,6 @@
 package com.teamhaddy.app.chaterest;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -107,6 +108,10 @@ public class MusicFragment extends Fragment {
 
                 // Clear the input
                 input.setText("");
+
+                //click sound
+
+
 
             }
         });

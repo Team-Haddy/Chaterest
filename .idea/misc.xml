@@ -3,13 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Chaterest/app/src/main/res/drawable-anydpi/ic_settings.xml" value="0.20833333333333334" />
         <entry key="..\:/Chaterest/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.13333333333333333" />
         <entry key="..\:/Chaterest/app/src/main/res/drawable/bg_gradient.xml" value="0.13333333333333333" />
         <entry key="..\:/Chaterest/app/src/main/res/drawable/footer.xml" value="0.15" />
-        <entry key="..\:/Chaterest/app/src/main/res/drawable/ic_about_logo.xml" value="0.2" />
         <entry key="..\:/Chaterest/app/src/main/res/drawable/ic_chaterestlogo.xml" value="0.20833333333333334" />
-        <entry key="..\:/Chaterest/app/src/main/res/drawable/ic_circlemask.xml" value="0.14947916666666666" />
         <entry key="..\:/Chaterest/app/src/main/res/drawable/ic_launcher_background.xml" value="0.13333333333333333" />
         <entry key="..\:/Chaterest/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.13333333333333333" />
         <entry key="..\:/Chaterest/app/src/main/res/drawable/ic_music.xml" value="0.15" />
@@ -20,7 +17,6 @@
         <entry key="..\:/Chaterest/app/src/main/res/drawable/splash_background.xml" value="0.13333333333333333" />
         <entry key="..\:/Chaterest/app/src/main/res/drawable/splash_fg.xml" value="0.1361111111111111" />
         <entry key="..\:/Chaterest/app/src/main/res/font/chaterestfont.xml" value="0.16354166666666667" />
-        <entry key="..\:/Chaterest/app/src/main/res/layout/activity_about.xml" value="0.2449952335557674" />
         <entry key="..\:/Chaterest/app/src/main/res/layout/activity_chat_message.xml" value="0.1793478260869565" />
         <entry key="..\:/Chaterest/app/src/main/res/layout/activity_gsignin.xml" value="0.11927083333333334" />
         <entry key="..\:/Chaterest/app/src/main/res/layout/activity_interest.xml" value="0.12613981762917933" />
@@ -32,16 +28,13 @@
         <entry key="..\:/Chaterest/app/src/main/res/layout/fragment_sports.xml" value="0.12613981762917933" />
         <entry key="..\:/Chaterest/app/src/main/res/layout/fragment_tech.xml" value="0.136" />
         <entry key="..\:/Chaterest/app/src/main/res/layout/messages.xml" value="0.1703125" />
-        <entry key="..\:/Chaterest/app/src/main/res/layout/messages2.xml" value="0.16770833333333332" />
-        <entry key="..\:/Chaterest/app/src/main/res/layout/messages3.xml" value="0.13385416666666666" />
-        <entry key="..\:/Chaterest/app/src/main/res/menu/commonmenu.xml" value="0.29010416666666666" />
         <entry key="..\:/Chaterest/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.13333333333333333" />
-        <entry key="..\:/Chaterest/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/dhanu/AndroidStudioProjects/Chaterest/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/dhanu/AndroidStudioProjects/Chaterest/app/src/main/res/drawable/ic_music.xml" value="0.3776041666666667" />
         <entry key="..\:/Users/dhanu/AndroidStudioProjects/Chaterest/app/src/main/res/drawable/ic_sports.xml" value="0.3776041666666667" />
         <entry key="..\:/Users/dhanu/AndroidStudioProjects/Chaterest/app/src/main/res/drawable/ic_tech.xml" value="0.3776041666666667" />
         <entry key="..\:/Users/dhanu/AndroidStudioProjects/Chaterest/app/src/main/res/drawable/splash_background.xml" value="0.38177083333333334" />
+        <entry key="..\:/Users/dhanu/AndroidStudioProjects/Chaterest/app/src/main/res/font/chaterestfont.xml" value="0.38974358974358975" />
         <entry key="..\:/Users/dhanu/AndroidStudioProjects/Chaterest/app/src/main/res/layout/activity_gsignin.xml" value="0.35" />
         <entry key="..\:/Users/dhanu/AndroidStudioProjects/Chaterest/app/src/main/res/layout/activity_interest.xml" value="0.3614583333333333" />
         <entry key="..\:/Users/dhanu/AndroidStudioProjects/Chaterest/app/src/main/res/layout/activity_login.xml" value="0.2296195652173913" />
@@ -50,6 +43,7 @@
         <entry key="..\:/Users/dhanu/AndroidStudioProjects/Chaterest/app/src/main/res/layout/fragment_music.xml" value="0.35" />
         <entry key="..\:/Users/dhanu/AndroidStudioProjects/Chaterest/app/src/main/res/layout/fragment_sports.xml" value="0.35" />
         <entry key="..\:/Users/dhanu/AndroidStudioProjects/Chaterest/app/src/main/res/layout/fragment_tech.xml" value="0.35" />
+        <entry key="..\:/Users/dhanu/AndroidStudioProjects/Chaterest/app/src/main/res/layout/messages.xml" value="0.29528985507246375" />
       </map>
     </option>
   </component>
