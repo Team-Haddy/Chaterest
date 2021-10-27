@@ -111,8 +111,7 @@ public class MusicFragment extends Fragment {
 
                 //click sound
 
-                MediaPlayer mediaPlayer = MediaPlayer.create(getContext(), R.raw.clicksound);
-                mediaPlayer.start();
+
 
             }
         });

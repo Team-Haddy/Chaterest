@@ -110,10 +110,7 @@ public class SportsFragment extends Fragment {
                 // Clear the input
                 input.setText("");
 
-                //click sound
 
-                MediaPlayer mediaPlayer = MediaPlayer.create(getContext(), R.raw.clicksound);
-                mediaPlayer.start();
 
             }
         });
