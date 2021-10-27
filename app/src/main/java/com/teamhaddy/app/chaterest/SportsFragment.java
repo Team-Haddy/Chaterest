@@ -89,6 +89,7 @@ public class SportsFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 EditText input = (EditText) root.findViewById(R.id.user_message);
+                if(input.getText().toString().trim().length()!=0){
 
                 // Read the input field and push a new instance
                 // of ChatMessage to the Firebase database
@@ -107,6 +108,7 @@ public class SportsFragment extends Fragment {
 
 
 
+                }
             }
         });
 
@@ -116,7 +118,7 @@ public class SportsFragment extends Fragment {
 
         FirebaseListOptions<ChatMessage> options =
                 new FirebaseListOptions.Builder<ChatMessage>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Sports"), ChatMessage.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Sports").limitToLast(100), ChatMessage.class)
                         .setLayout(R.layout.messages2)
                         .build();
 

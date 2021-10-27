@@ -88,25 +88,26 @@ public class MusicFragment extends Fragment {
             public void onClick(View view) {
                 EditText input = (EditText) root.findViewById(R.id.user_message);
 
-                // Read the input field and push a new instance
-                // of ChatMessage to the Firebase database
-                FirebaseDatabase.getInstance()
-                        .getReference()
-                        .child("Music")
-                        .push()
-                        .setValue(new ChatMessage(input.getText().toString(),
-                                FirebaseAuth.getInstance()
-                                        .getCurrentUser()
-                                        .getDisplayName())
-                        );
+                if(input.getText().toString().trim().length()!=0) {
+                    // Read the input field and push a new instance
+                    // of ChatMessage to the Firebase database
+                    FirebaseDatabase.getInstance()
+                            .getReference()
+                            .child("Music")
+                            .push()
+                            .setValue(new ChatMessage(input.getText().toString(),
+                                    FirebaseAuth.getInstance()
+                                            .getCurrentUser()
+                                            .getDisplayName())
+                            );
 
-                // Clear the input
-                input.setText("");
+                    // Clear the input
+                    input.setText("");
 
-                //click sound
+                    //click sound
 
 
-
+                }
             }
         });
 
@@ -115,7 +116,7 @@ public class MusicFragment extends Fragment {
 
         FirebaseListOptions<ChatMessage> options =
                 new FirebaseListOptions.Builder<ChatMessage>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Music"), ChatMessage.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Music").limitToLast(100), ChatMessage.class)
                         .setLayout(R.layout.messages3)
                         .build();
 

@@ -94,22 +94,24 @@ public class TechFragment extends Fragment {
             public void onClick(View view) {
                 EditText input = (EditText) root.findViewById(R.id.user_message);
 
-                // Read the input field and push a new instance
-                // of ChatMessage to the Firebase database
-                FirebaseDatabase.getInstance()
-                        .getReference()
-                        .child("Tech")
-                        .push()
-                        .setValue(new ChatMessage(input.getText().toString(),
-                                FirebaseAuth.getInstance()
-                                        .getCurrentUser()
-                                        .getDisplayName())
-                        );
+                if(input.getText().toString().trim().length()!=0) {
 
-                // Clear the input
-                input.setText("");
+                    // Read the input field and push a new instance
+                    // of ChatMessage to the Firebase database
+                    FirebaseDatabase.getInstance()
+                            .getReference()
+                            .child("Tech")
+                            .push()
+                            .setValue(new ChatMessage(input.getText().toString(),
+                                    FirebaseAuth.getInstance()
+                                            .getCurrentUser()
+                                            .getDisplayName())
+                            );
 
+                    // Clear the input
+                    input.setText("");
 
+                }
 
             }
         });
@@ -119,7 +121,7 @@ public class TechFragment extends Fragment {
 
         FirebaseListOptions<ChatMessage> options =
                 new FirebaseListOptions.Builder<ChatMessage>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Tech"), ChatMessage.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Tech").limitToLast(100), ChatMessage.class)
                         .setLayout(R.layout.messages)
                         .build();
 
