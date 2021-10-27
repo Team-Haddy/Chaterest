@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.firebase.ui.database.FirebaseListOptions;
@@ -75,13 +76,6 @@ public class SportsFragment extends Fragment {
         adapter.startListening();
     }
 
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        adapter.stopListening();
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -115,6 +109,8 @@ public class SportsFragment extends Fragment {
 
             }
         });
+
+
 
         ListView listOfMessages = (ListView) root.findViewById(R.id.list_message);
 

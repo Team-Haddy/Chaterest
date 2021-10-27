@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.PopupMenu;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -51,20 +53,27 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
         getMenuInflater().inflate(R.menu.commonmenu,menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        sendUserToSettingsactivity();
-        return super.onOptionsItemSelected(item);
-    }
-    private void sendUserToSettingsactivity(){
+        switch(item.getItemId()) {
+            case R.id.menu1:
+                startActivity(new Intent(this, SettingsActivity.class));
+                return true;
 
-        Intent settingsIntent= new Intent(getApplicationContext(), SettingsActivity.class);
-        startActivity(settingsIntent);
+            case R.id.menu2:
+                startActivity(new Intent(this, AboutActivity.class));
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
+
 
     @Override
     public void onBackPressed(){

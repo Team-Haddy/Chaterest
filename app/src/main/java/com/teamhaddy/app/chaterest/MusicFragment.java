@@ -74,13 +74,6 @@ public class MusicFragment extends Fragment {
         adapter.startListening();
     }
 
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        adapter.stopListening();
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -116,6 +109,7 @@ public class MusicFragment extends Fragment {
 
             }
         });
+
 
         ListView listOfMessages = (ListView) root.findViewById(R.id.list_message);
 
