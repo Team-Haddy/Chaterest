@@ -137,7 +137,7 @@ public class MusicFragment extends Fragment {
                 messageUser.setText(model.getMessageUser());
 
                 // Format the date before showing it
-                messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)",
+                messageTime.setText(DateFormat.format("HH:mm:ss  dd/MM/yyyy",
                         model.getMessageTime()));
             }
         };
