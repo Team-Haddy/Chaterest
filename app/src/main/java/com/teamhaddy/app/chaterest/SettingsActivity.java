@@ -27,7 +27,7 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 public class SettingsActivity extends AppCompatActivity {
 
     private Button ChangeUsername,SignOutBtn;
-    private EditText editedUsername;
+    private EditText editedUsername, email_disp;
     private static final String TAG = "SettingsActivity";
 
     @Override
@@ -38,6 +38,7 @@ public class SettingsActivity extends AppCompatActivity {
         SignOutBtn= (Button) findViewById(R.id.sign_out_btn);
         ChangeUsername=(Button) findViewById(R.id.change_username_btn);
         editedUsername= (EditText) findViewById(R.id.set_username);
+        email_disp= (EditText) findViewById(R.id.emailid);
 
 
         ActionBar actionBar = getSupportActionBar();
@@ -66,6 +67,7 @@ public class SettingsActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
         editedUsername.setText(user.getDisplayName());
+        email_disp.setText(user.getEmail());
 
     }
 
@@ -129,6 +131,14 @@ public class SettingsActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void toastmail(View v){
+        Toast.makeText(getApplicationContext(), "Email cannot be modified for security reasons", Toast.LENGTH_SHORT).show();
+    }
+
+    public void gotoabout(View v){
+        startActivity(new Intent(this, AboutActivity.class));
     }
 }
 
