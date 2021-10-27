@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseListAdapter;
@@ -146,6 +147,11 @@ public class TechFragment extends Fragment {
         };
 
         listOfMessages.setAdapter(adapter);
+
+        ProgressBar pb = (ProgressBar) root.findViewById(R.id.progressbar_loading);
+        pb.setVisibility(View.GONE);
+
+        listOfMessages.setEmptyView(pb);
 
 
         return root;
