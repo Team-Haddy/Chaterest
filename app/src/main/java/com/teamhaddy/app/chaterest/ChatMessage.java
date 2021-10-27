@@ -1,10 +1,8 @@
 package com.teamhaddy.app.chaterest;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.Date;
 
-public class ChatMessage extends AppCompatActivity {
+public class ChatMessage{
 
     private String messageText;
     private String messageUser;
